@@ -1,4 +1,4 @@
-const divideMothod = (nums)=>{
+const divideMothod = (nums:Array<number>)=>{
     let hcf =  hcfOfTwoNums(nums[0], nums[1])
     for(let i=2; i<nums.length; i++){
         hcf = hcfOfTwoNums(nums[i], hcf);
@@ -6,7 +6,7 @@ const divideMothod = (nums)=>{
     return hcf
 }
 
-const hcfOfTwoNums  = (num1, num2)=>{
+const hcfOfTwoNums  = (num1:number, num2:number)=>{
 
     while(num1>0 && num2>0)
     {
@@ -20,6 +20,8 @@ const hcfOfTwoNums  = (num1, num2)=>{
     return num1||num2
 }
 
-console.log(divideMothod([1365, 1584,1872]))
-console.log(divideMothod([84,90]))
-console.log(divideMothod([45, 20,20, 45]))
+
+export default divideMothod;
+// 
+// console.log(divideMothod([84,90]))
+// console.log(divideMothod([45, 20,20, 45])).

@@ -1,26 +1,28 @@
+import primeFactors from './primeFactors.js';
+import commonFacotrs from './commonInArray.js';
+
 const hcfSplitMethod   =  (arr)=>{
-
-    for(let value of arr){
-        let commonPrimeFactors = primeFactors(value)         
-    }
-}
-
-const primeFactors = (value)=>{
-    let primenumbers  = [2,3,5,7];
-    
-    let start = 0;
-
-    while(value>0 && start<primenumbers.length);
-}
-
-const isPrime = (num)=>{
+    let factors = []
+    let highestCommonFactor = 1
    
-    console.log(rootedVal);
-}
+    for(let value of arr){
+        let commonPrimeFactors = primeFactors(value*10); // Multiplying 10 to deal with decimals
+        factors.push(commonPrimeFactors);        
+    }
 
+    let CommonFactors = commonFacotrs(factors);
 
-const handlePower = (num)=>{
+    for(let i=0; i<CommonFactors.length; i++){
+        highestCommonFactor = highestCommonFactor * CommonFactors[i];
+    }
+
     
+    console.log(highestCommonFactor/10); // dividing 10 to deal with decimals
 }
-// hcfSplitMethod([84,90]);
+
+
+
+
+
+hcfSplitMethod([24.3,68.4]);
 
